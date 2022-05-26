@@ -1,5 +1,5 @@
 # You can set these variables from the command line.
-POETRY        = $(shell which poetry)
+POETRY        = /home/user/.poetry/bin/poetry
 SPHINXOPTS    = -j auto
 SPHINXBUILD   = $(POETRY) run sphinx-build
 PAPER         =
@@ -29,6 +29,7 @@ clean:
 .PHONY: preview
 preview: setup
 	$(POETRY) run sphinx-autobuild -b dirhtml $(ALLSPHINXOPTS) $(BUILDDIR)/dirhtml --port 5500
+#	/home/user/.poetry/bin/poetry run sphinx-autobuild -b dirhtml $(ALLSHINXOPTS) $(BUILDDIR)/dirhtml --port
 
 .PHONY: dirhtml
 dirhtml: setup
